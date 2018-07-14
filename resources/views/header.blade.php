@@ -6,9 +6,9 @@
         background-color: green;
         font-family: 'Sans Serif';
         line-height: 10px;
-        font-size: 16px;
-        padding-left: 20px;
-        padding-top: 5px;
+        font-size: 18px;
+        padding-left: 1px;
+        padding-top: .1px;
         padding-bottom: 5px;
         color: white;
         }

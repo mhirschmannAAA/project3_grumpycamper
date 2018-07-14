@@ -8,6 +8,10 @@
 
     <title>Grumpy Camper</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <!-- Fonts -->
@@ -15,7 +19,6 @@
 
     <!-- Styles -->
     <style>
-        
         .body {
             background-image: url("/images/unlevel.jpg");
             background-size: cover;
@@ -27,7 +30,8 @@
             display: flex;
             min-height: 100vh;
             flex-direction: column;
-         }
+        }
+
         .full-height {
             height: 100vh;
         }
@@ -40,7 +44,7 @@
         }
 
         #nav-mobile {
-        margin-left: 50px;
+            margin-left: 50px;
         }
 
         .position-ref {
@@ -58,7 +62,7 @@
         }
 
         .title {
-            /* font-size: 65px; */
+            font-size: 65px;
             text-align: left;
             font-family: 'Rock Salt';
             line-height: 50px;
@@ -105,7 +109,7 @@
     <div class="page-header">
         @include('header')
     </div>
-        <div class="jumbotron">
+    <div class="jumbotron">
         <div class="body">
             <div class="content">
                 <div class="title m-b-md">
@@ -113,7 +117,14 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Rating Form
+            </button>
         </div>
+    </div>
     </div>
 
     <footer class="page-footer">
@@ -134,7 +145,35 @@
                 </div>
             </div>
         </div>
-    </footer>
-</body>
 
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="exampleModalLabel">Modal</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span id="mcontent"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            $(document).ready(function() {               
+            $('#myModal').on("shown.bs.modal", function (e) {
+                $.get('/views/ratingform', function(data){
+                    $("#mcontent").html(data);
+                });
+             });
+        });
+    </script>
+</body>
 </html>
