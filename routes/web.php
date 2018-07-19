@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     // $site_title = "Grumpy Camper";
     // $owner_name = "Michael";
     return view('welcome');
