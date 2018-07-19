@@ -24,3 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/views/ratingform', function(){
     return view('ratingform');
 });
+
+Route::post('/', ['as' => 'form_url', 'uses' => 'RatingFormController@save_data']);

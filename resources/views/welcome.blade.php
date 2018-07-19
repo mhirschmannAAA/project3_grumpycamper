@@ -24,7 +24,6 @@
             background-size: cover;
             display: block;
             background-repeat: no-repeat;
-            /* background-size: 100% 100%; */
             height: 100%;
             width: 100%;
             display: flex;
