@@ -15,8 +15,15 @@ class CreateCampsitesTable extends Migration
     {
         Schema::create('campsites', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('camp_name');
-            $table->text('city');
+            $table->text('camp_name')->nullable();
+            $table->text('city')->nullable();
+            $table->text('state')->nullable();
+            $table->text('level')->nullable();
+            $table->text('shade')->nullable();
+            $table->text('groundcover')->nullable();
+            $table->text('deckpad')->nullable();
+            $table->text('picnic')->nullable();
+            $table->text('privacy')->nullable();
             $table->timestamps();
         });
     }
